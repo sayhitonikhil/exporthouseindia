@@ -252,13 +252,22 @@
 
             {%- if settings.show_compare and settings.product_compare_type == 'default' -%}
                 <div class="card-compare-wrapper card-list__hidden">
-                    {% render 'product-compare'.
-                        product: product_card_product,
-                        sectionId: sectionId,
-                        check: true
-                    %}
+                    {% render 'product-compare', product: product_card_product, sectionId: sectionId, check: true %}
                 </div>
             {%- endif -%}
         </div>
     </div>
 </div>
+{% comment %}
+
+This file has been rewritten to preserve the original behavior.
+
+---
+Changes:
+- from: "{% render 'product-compare'.\r\n                        product: product_card_product,\r\n
+    \                       sectionId: sectionId,\r\n                        check:
+    true\r\n                    %}"
+  to: "{% render 'product-compare', product: product_card_product, sectionId: sectionId,
+    check: true %}"
+  position: 13439..13535
+{% endcomment %}
